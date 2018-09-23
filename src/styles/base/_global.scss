@@ -4,8 +4,8 @@
                             "main"
                             "footer";
     grid-template-columns: 100%;
-    grid-template-rows: 100px /* Header */
-                        1fr  /* Main Content */
+    grid-template-rows: 60px /* Header */
+                        1fr /* Main Content */
                         50px; /* Footer */
     min-height: 100vh;
     margin: 0;
@@ -21,7 +21,12 @@
 
     &__header {
         grid-area: header;
-        background-color: #42b883
+        padding: 10px;
+        background-color: #42b883;
+
+        @media only screen and (min-device-width: 768px) {
+            padding: 30px;
+        }
     }
 
     &__footer {

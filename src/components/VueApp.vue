@@ -42,21 +42,23 @@
                 aria-hidden="true"
                 hidden></a>
         </header>
-        <main class="hg__main"><i class="fas fa-coffee"></i></main>
+        <main class="hg__main">
+            <router-view/>
+        </main>
         <footer class="hg__footer">Footer</footer>
     </div>
 </template>
 <script>
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 library.add(faTimes, faBars);
 
 export default {
   components: {
-    FontAwesomeIcon,
-  },
+    FontAwesomeIcon
+  }
 };
 </script>
 
