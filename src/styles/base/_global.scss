@@ -1,0 +1,35 @@
+.hg {
+    display: grid;
+    grid-template-areas:    "header"
+                            "main"
+                            "footer";
+    grid-template-columns: 100%;
+    grid-template-rows: 100px /* Header */
+                        1fr  /* Main Content */
+                        50px; /* Footer */
+    min-height: 100vh;
+    margin: 0;
+
+    //MQs for Larger screens
+    @media only screen and (min-device-width: 768px) {
+        grid-template-areas:    "header header header"
+                                "main main main"
+                                "footer footer footer";
+        grid-template-columns: 150px 1fr;
+        grid-template-rows: 100px 1fr 90px;
+    }
+
+    &__header {
+        grid-area: header;
+        background-color: #42b883
+    }
+
+    &__footer {
+        grid-area: footer;
+        background-color: #35495e;
+    }
+
+    &__main {
+        grid-area: main;
+    }
+}
