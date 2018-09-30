@@ -34,6 +34,9 @@
                     <li>
                         <router-link to="/about">About</router-link>
                     </li>
+					 <li>
+                        <router-link to="/mutations">Array Mutations</router-link>
+                    </li>
                 </ul>
             </nav>
             <a  href="#main-menu-toggle"
