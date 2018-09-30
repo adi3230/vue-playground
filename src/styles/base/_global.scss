@@ -1,3 +1,7 @@
+body {
+	margin: 0;
+	padding: 0;
+}
 .hg {
     display: grid;
     grid-template-areas:    "header"
@@ -35,6 +39,7 @@
     }
 
     &__main {
-        grid-area: main;
+		grid-area: main;
+		margin: 1em;
     }
 }
