@@ -1,16 +1,42 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import Axios from 'axios';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-  state: {
+const SET_CHARACTERS = 'SET_CHARACTERS';
 
-  },
-  mutations: {
+const state = {
+	characters: null
+}
 
-  },
-  actions: {
+const getters = {
+	getCharacters(state) {
+		return state.characters;
+	}
+}
 
-  },
-});
+const mutations = {
+	SET_CHARACTERS(state, characters) {
+		state.characters = characters.results;
+	}
+}
+
+const actions = {
+	fetchCharacters({ commit }) {
+		Axios.get('https://rickandmortyapi.com/api/character/')
+				.then(characters => {
+					commit(SET_CHARACTERS, characters.data);
+				});
+	}
+
+}
+
+const store = new Vuex.Store({
+    state,
+    getters,
+    mutations,
+    actions
+})
+
+export default store
